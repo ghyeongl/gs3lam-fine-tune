@@ -22,7 +22,7 @@
 
 <p align="left">
   <a href="">
-    <img src="./assets/teaser.png" alt="GS3LAM teaser" width="100%">
+    <img src="./teaser.png" alt="GS3LAM teaser" width="100%">
   </a>
 </p>
 
