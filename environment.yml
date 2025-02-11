@@ -1,27 +1,36 @@
-name: gs3lam
+name: gh-gs3lam
 channels:
   - pytorch
   - conda-forge
   - defaults
 dependencies:
-  - cudatoolkit=11.6
+  # -------------------
+  # conda 패키지 목록
+  # -------------------
   - python=3.10
+  - cudatoolkit=11.6
   - pytorch=1.12.1
   - torchaudio=0.12.1
   - torchvision=0.13.1
-  - tqdm=4.65.0
-  - Pillow
-  - faiss-gpu
-  - opencv
-  - imageio
-  - matplotlib
-  - kornia
-  - natsort
-  - pyyaml
-  - pip
+  - tqdm=4.65.0         # for tqdm
+  - scikit-learn        # sklearn.decomposition / PCA
+  - pytorch-msssim      # from conda-forge (pytorch_msssim) 
+  - pillow              # PIL
+  - faiss-gpu           # faiss-gpu
+  - opencv              # cv2
+  - numpy               # numpy (명시적으로 추가)
+  - imageio             # imageio
+  - matplotlib          # matplotlib
+  - kornia              # kornia
+  - natsort             # natsort
+  - pyyaml              # yaml
+  - pip                 # pip 자체
+  # -------------------
+  # pip 패키지 목록
+  # -------------------
   - pip:
-    - lpips
-    - open3d==0.16.0
-    - torchmetrics
-    - cyclonedds
-    - plyfile==0.8.1
+    - lpips            # LPIPS (이미 pytorch는 설치됨)
+    - open3d==0.16.0   # 3D 시각화/처리 라이브러리
+    - torchmetrics==1.5.2     # torchmetrics
+    - cyclonedds       # DDS 
+    - plyfile==0.8.1   # ply 파일 입출력
