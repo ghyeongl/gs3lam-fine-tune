@@ -22,7 +22,7 @@ group_name = "Replica"
 run_name = str(datetime.now().strftime("%y%m%d-%H:%M:%S"))
 
 config = dict(
-    workdir=f"./logs/{group_name}/{scene_name}_seed{seed}",
+    workdir=f"./logs/{group_name}/{scene_name}_seed{seed}", # Directory to save results
     run_name=run_name,
     seed=seed,
     primary_device=primary_device,
@@ -33,7 +33,7 @@ config = dict(
     eval_every=5, # Evaluate every nth frame (at end of SLAM)
     scene_radius_depth_ratio=3, # (Meters) Max First Frame Depth to Scene Radius Ratio (For Pruning/Densification)
     mean_sq_dist_method="projective", # Mean Squared Distance Calculation for Scale of Gaussians
-    gaussian_distribution="isotropic", # ["isotropic", "anisotropic"] (Isotropic -> Spherical Covariance, Anisotropic -> Ellipsoidal Covariance)
+    gaussian_distribution="anisotropic", # ["isotropic", "anisotropic"] (Isotropic -> Spherical Covariance, Anisotropic -> Ellipsoidal Covariance)
     densify_method="alpha", # ['depth_sil', 'alpha']
     report_iter_progress=False,
     load_checkpoint=False,
